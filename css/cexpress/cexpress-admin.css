@@ -1,0 +1,35 @@
+body {
+    font-family: Arial,Helvetica,sans-serif;
+    color: #343434;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.glyphicon { margin-right:10px; }
+.panel-body { padding:0px; }
+.panel-body table tr td { padding-left: 15px }
+.panel-body .table {margin-bottom: 0px; }
+
+.table tbody tr:hover td,
+.table tbody tr:hover th {
+  background-color: transparent;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color:#CCEBCB;
+}
+
+.container  .row  .table tr.active th, .container  .row  .table > tbody > tr.active td{
+ background-color: red;
+}
+.packetselected{
+  background-color: #CCEBCB !important;
+}
+ul
+{
+	list-style-type: none;
+}
+
+a[ng-click]{
+    cursor: pointer;
+}

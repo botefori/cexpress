@@ -1,0 +1,17 @@
+#container { 
+padding:10px; 
+border:1px solid #000; 
+background-color:#FFF; 
+} 
+p { 
+clear:both;
+font-size:100%; 
+line-height:150%; 
+} 
+.floatbox { 
+float:left; 
+width:60px; 
+height:60px; 
+background-color:#999; 
+border:1px solid #000; 
+}

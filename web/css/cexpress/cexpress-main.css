@@ -1,0 +1,250 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+body {
+    font-family: Arial,Helvetica,sans-serif;
+    color: #343434;
+    background: #E1E1E1 url("../images/body.jpg") no-repeat scroll center top;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+#hd-top{
+  background: #420902 url("../images/header-bg.gif") repeat-x scroll left top;
+  border-top: 1px solid #701503;
+  padding: 0px 0px 20px;
+}
+
+#header-left-menu {
+    overflow: hidden;
+}
+
+h1{
+   text-align: center;
+	font-weight: 400;
+	font-size: 20px;
+	padding: 20px 0px;
+	color: #777;
+	float:left;
+}
+
+h2 {
+    font-size: 29px;
+    line-height: 35px;
+    color: #E44E0B;;
+    font-family: "Open Sans",sans-serif;
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    word-spacing: -1px;
+	margin-bottom:10px;
+	margin-left:10px
+}
+
+.ul-1 {
+    overflow: hidden;
+    float: right;
+    padding: 15px 19px 0px 0px;
+}
+
+ol, ul {
+    list-style: outside none none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.ul-1 li {
+    float: left;
+    font-size: 12px;
+    line-height: 15px;
+    padding-left: 10px;
+}
+
+.ul-1 li a {
+    color: #FFF;
+}
+
+
+
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {
+	display:block;
+}
+
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+}
+
+h3 {
+    font-size: 19px;
+    line-height: 23px;
+    font-family: "Open Sans",sans-serif;
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    color: #e44e0b;
+}
+
+fieldset{
+  margin-top:20px;
+  background-color:#a9cad7;
+  /*padding:16px;*/	
+}
+
+legend{
+    font-family: Arial,sans-serif;
+	font-weight:lighter;
+    letter-spacing: 1px;
+	border-style:none none none;
+    color: #92430f;
+}
+
+h3 span, h2 span {
+    color: #FFF;
+}
+
+.ct_header {
+    background: #2f4a75 url("../images/h3.gif") repeat-x scroll left top;
+    padding: 4px 0px 7px 19px;
+	margin-bottom:10px;
+	margin-top:20px;
+}
+
+.legend-header
+{
+    background: #2f4a75 url("../images/fielset-h3.gif") repeat-x scroll left top;
+    padding: 4px 0px 7px 19px;
+	margin-bottom:15px;
+	margin-top:0;
+}
+
+.legend-header h3{
+  color: #f95309;
+  font-size: 1.2em;
+  font-weight:lighter;
+  line-height: 1.5em;
+}
+
+#middle-page{
+ margin-top:15px;
+}
+
+#ct-left{
+ padding-left:0;
+}
+
+select option:first-child {
+	color: grey;
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+}
+
+.right-box{
+  float:right;
+}
+
+.left-box{
+  padding-left:16px !important;
+  float:left;
+  padding-left:0;
+}
+
+.small-number{
+ width:60px !important;
+}
+
+.small-phone{
+ width:130px;
+}
+
+#btn-shedule{
+  margin-top:10px;
+  float:right;
+}
+
+#btn-Quickquote{
+  margin-top:10px;
+  float:left;
+  margin:10px 0 10px 10px;
+}
+
+.col-md-1{
+ width:35%;
+ padding-right:0;
+ margin-top:20px;
+}
+
+.col-md-7{
+ width:65%;
+}
+
+#recpBox .recapheader
+{
+    border-bottom: 1px solid #701503;
+    padding: 4px 0px 7px 19px;
+	margin-bottom:15px;
+	margin-top:0;
+}
+
+#recpBox .recapheader  h3 {
+    font-size: 17px;
+    line-height: 23px;
+    font-family: "Open Sans",sans-serif;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+
+.table tbody > tr , .table tbody > tr > td{
+    border-top:none;
+}
+
+.fieldset_displaynone{
+  display:none;
+}
+
+/* Repeated pieces items*/
+
+.float{
+  margin-right:12px;
+  padding-right:0px;
+}
+
+.aline_left{
+ display:inline-block;
+
+}
+
+.article_lab{
+  width:10%;
+}
+
+.article_name{
+  width:35%;
+}
+
+.article_dims{
+  width:10%;
+}
+
+.prev_overflox{
+  overflow:hidden;
+}
+
+.pieces-region{
+ margin-left:10px;
+ margin-bottom:10px;
+}
+
+.col-xs-2 {
+    width: 12%;
+}
+
+#pickup_setup .col-xs-3{
+ width:35%;
+}

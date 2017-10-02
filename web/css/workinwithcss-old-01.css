@@ -1,0 +1,45 @@
+﻿p {
+	margin: 0px;
+}
+div {
+	border: solid;
+	border-color: black;
+}
+#div1 {
+	background-color: yellow;
+}
+#div2 {
+	background-color: cyan;
+	position:absolute;
+	top:15px;
+	left:30px;
+	width:450px;
+	height:400px;
+}
+#div3 {
+	background-color: lightpink;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:33%;
+	height:100%;
+}
+#div4 {
+	background-color: orange;
+	position:absolute;
+	top:0px;
+	left:33%;
+	width:33%;
+	height:100%;
+}
+#div5 {
+	background-color: lightblue;
+	position:absolute;
+	top:0px;
+	right:0px;
+	width:33%;
+	height:100%;
+}
+#div6 {
+	background-color: lightgray;
+}

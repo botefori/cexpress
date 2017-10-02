@@ -1,0 +1,52 @@
+body { font-family: sans-serif;}
+code {font-size: 120%; color: maroon}
+div, div span, div p {
+  padding: 10px;
+  color: #fff;
+}
+li {margin-bottom: .5em;}
+div {margin-bottom: 1em;background: orange;}
+div span {float: left; background: maroon;}
+div p {margin: 0; background: #777;}
+
+/* BFC with overflow */
+.two p, .two2 p {overflow: hidden; background: olive}
+
+/* BFC with inline-block (need width) */
+.three p, .three2 p {display: inline-block; background: hotpink;}
+
+/* BFC with table */
+.four p, .four2 p {display: table; table-layout: fixed; background: DarkSlateBlue;}
+
+/* BFC with table-cell */
+.five p, .five2 p, .five3 p {display: table-cell; background: indianred; width: 5000px;}
+
+/* BFC with table-caption */
+.six p, .six2 p {display: table-caption; background: SaddleBrown}
+
+/* BFC with flexbox */
+.seven, .seven2 {
+  display: flex;
+  align-items: flex-start;
+}
+.seven p, .seven2 p {flex: 1; background: #db5600}
+
+/* Em measurement details */
+
+/* First container for the em example */ 
+#firstbox { 
+	margin:10px; 
+	font-size:11px; 
+	width:1em; 
+	height:1em; 
+	border:1px solid black; 
+} 
+/* Second container for the em example */ 
+#secondbox { 
+	margin:10px; 
+	font-size:30px; 
+	width:1em; 
+	height:1em; 
+	border:1px solid black; 
+}
+

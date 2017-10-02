@@ -1,0 +1,39 @@
+﻿p {
+	margin: 0px;
+}
+div {
+	border: solid;
+	border-color: black;
+}
+#div1 {
+	background-color: yellow;
+}
+#div2 {
+	background-color: cyan;
+	clear:both;
+}
+#div3 {
+	background-color: lightpink;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	float:left;
+	width:33%;
+}
+#div4 {
+	background-color: orange;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	float:left;
+	width:34%;
+}
+#div5 {
+	background-color: lightblue;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	float:left;
+	width:33%;
+}
+#div6 {
+	background-color: lightgray;
+	clear:left;
+}

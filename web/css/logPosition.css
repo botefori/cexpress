@@ -1,0 +1,23 @@
+/* Define the container for positioning examples */ 
+ #container { 
+  width:400px; 
+  height:400px; 
+  margin:10px; 
+    padding:10px; 
+  border:1px solid #000; 
+    background-color: #FFF; 
+  }
+p { 
+  font-size:100%; 
+  line-height:150%; 
+} 
+
+.image_float{
+ position:relative;
+}
+
+/* Define image position */ 
+  img { 
+    position:absolute; 
+    left:400px; 
+} 

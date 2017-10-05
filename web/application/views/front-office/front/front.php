@@ -15,7 +15,7 @@
 			   </li>
 			   <li title="4" pk-stapes>
 			      <em>3</em>
-				  <span>Récapitulatif</>
+				  <span>Récapitulatifs</>
 			   </li>
 		   </ul>
 		 </div>

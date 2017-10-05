@@ -17,7 +17,7 @@ services:
             - default
         volumes:
             - database:/var/lib/mariadb:rw
-            - /home/icamara/my-projects/database:/var/dump
+            - /home/icamara/my-projects/cexpress/database:/var/dump
         environment:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: courriers
@@ -32,7 +32,7 @@ services:
         ports:
             - 8084:80
         volumes:
-            - ./cexpress:/var/www/html
+            - ./web:/var/www/html
             - /home/icamara/.ssh:/root/.ssh
         environment:
             VIRTUAL_HOST: cexpress.docker

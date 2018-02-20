@@ -3,58 +3,37 @@ services:
     proxy:
         image: jwilder/nginx-proxy
         container_name: cexpress-proxy
-        ports:
-          - "80:80"
         volumes:
-          - /var/run/docker.sock:/tmp/docker.sock:ro
-        networks:
-          - default
+            - "/var/run/docker.sock:/tmp/docker.sock:ro"
 
     database:
-        image: mariadb
+        image: mariadb:10.1
         container_name: cexpress-database
-        networks:
-            - default
         volumes:
-            - database:/var/lib/mariadb:rw
-            - /home/icamara/my-projects/cexpress/database:/var/dump
+            - ./database/sql:/docker-entrypoint-initdb.d
         environment:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: courriers
-            MYSQL_USER: root
-            MYSQL_PASSWORD: root
-    app:
-        build: docker/app
-        image: bagelconer/app
-        container_name: cexpress-app
-        networks:
-            - default
-        ports:
-            - 8084:80
+
+    cexpressApp:
+        build: docker/php70
+        image: cexpress/php70
+        container_name: cexpressapp
         volumes:
-            - ./web:/var/www/html
-            - /home/icamara/.ssh:/root/.ssh
+          - ./web:/var/www/html
         environment:
-            VIRTUAL_HOST: cexpress.docker
+            VIRTUAL_HOST: cexpress.site.docker
+            DOMAIN_NAME: cexpress.site.docker
         depends_on:
             - database
-        links:
-            - database:database
+
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         container_name: cexpress-phpmyadmin
-        networks:
-            - default
-        ports:
-            - 8082:80
         environment:
             MYSQL_ROOT_PASSWORD: root
             PMA_HOST: database
             VIRTUAL_HOST: phpmyadmin.docker
-
-
-networks:
-    default: {}
-
-volumes:
-    database: {}
+            DOMAIN_NAME: phpmyadmin.docker
+        depends_on:
+          - database

@@ -25,7 +25,7 @@ services:
             MYSQL_PASSWORD: root
     app:
         build: docker/app
-        image: bagelconer/app
+        image: cexpress/app
         container_name: cexpress-app
         networks:
             - default

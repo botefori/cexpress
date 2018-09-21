@@ -18,6 +18,7 @@ RUN apt-get update \
         wget \
         libz-dev libmemcached-dev \
         vim \
+        iputils-ping \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install opcache intl pdo_mysql zip gd exif soap \
     && pecl install xdebug-2.5.5 \

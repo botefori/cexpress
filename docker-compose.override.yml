@@ -1,5 +1,18 @@
-version: '2'
+version: '2.0'
+
 services:
-    database:
+    proxy:
         ports:
-            - 3306:3306
+        - 80:80
+        - 444:444
+    database:
+        volumes:
+        - database:/var/lib/mysql"
+
+    app:
+        volumes:
+        - ./web:/var/www/html
+        - /home/icamara/.ssh:/root/.ssh
+
+volumes:
+    database:

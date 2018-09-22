@@ -14,13 +14,14 @@ RUN apt-get update \
         libjpeg62-turbo-dev \
         libpng-dev \
         libxml2-dev \
+        mysql-client \
         git \
         wget \
         libz-dev libmemcached-dev \
         vim \
         iputils-ping \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install opcache intl pdo_mysql zip gd exif soap \
+    && docker-php-ext-install opcache intl pdo_mysql mysqli sockets zip gd exif soap \
     && pecl install xdebug-2.5.5 \
 #    && pecl install apc \
     && pecl install apcu-4.0.10 \ && echo extension=apcu.so > /usr/local/etc/php/conf.d/apcu.ini \
@@ -41,6 +42,9 @@ RUN apt-get update \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* \
     && rm -rf /tmp/pear
+
+
+RUN apt-get install -y libxml2-dev
 
 # Composer
 RUN curl -k -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

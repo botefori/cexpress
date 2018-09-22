@@ -12,7 +12,7 @@ fup:
 	docker-compose up -d --force-recreate
 
 db-reset:
-	docker-compose run --entrypoint=docker-php-entrypoint  sh -c "mysql -u root -proot -h database dolibarr < database/sql/courriers.sql"
+	docker-compose exec -T -u `id -u` app mysql -u root -proot -h database courriers < database/sql/courriers.sql
 
 down:
 	docker-compose down

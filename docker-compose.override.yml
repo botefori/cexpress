@@ -12,6 +12,7 @@ services:
     app:
         volumes:
         - ./web:/var/www/html
+        - ./database/sql:/var/www/html/database
         - /home/icamara/.ssh:/root/.ssh
 
 volumes:

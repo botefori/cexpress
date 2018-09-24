@@ -12,16 +12,18 @@ RUN apt-get update \
         zlib1g-dev \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
-        libpng12-dev \
+        libpng-dev \
         libxml2-dev \
+        mysql-client \
         git \
         wget \
         libz-dev libmemcached-dev \
         vim \
+        iputils-ping \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install opcache intl pdo_mysql zip gd exif soap \
-    && pecl install xdebug \
-    && pecl install apc \
+    && docker-php-ext-install opcache intl pdo_mysql mysqli sockets zip gd exif soap \
+    && pecl install xdebug-2.5.5 \
+#    && pecl install apc \
     && pecl install apcu-4.0.10 \ && echo extension=apcu.so > /usr/local/etc/php/conf.d/apcu.ini \
     && pecl install memcached-2.2.0 \
     && echo extension=memcached.so >> /usr/local/etc/php/conf.d/memcached.ini \
@@ -29,8 +31,8 @@ RUN apt-get update \
     && wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)" \
     && wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc" \
     && export GNUPGHOME="$(mktemp -d)" \
-    && gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
-    && gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu \
+#    && gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
+#    && gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu \
     && rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc \
     && chmod +x /usr/local/bin/gosu \
     && gosu nobody true \
@@ -40,6 +42,16 @@ RUN apt-get update \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* \
     && rm -rf /tmp/pear
+
+
+RUN apt-get install -y libxml2-dev
+
+# Composer
+RUN curl -k -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN mkdir -p /home/composer
+RUN chmod -R 777 /home/composer
+RUN composer global --no-interaction --working-dir=/home/composer require symfony/var-dumper
+RUN composer global --no-interaction --working-dir=/home/composer require "hirak/prestissimo:^0.3"
 
 # Configuration
 RUN a2enmod rewrite ssl
@@ -59,4 +71,12 @@ RUN docker-php-ext-install mysql
 RUN chmod 440 /etc/ssl/certs/server.crt
 RUN chmod 440 /etc/ssl/private/server.key
 
-CMD ["/usr/local/bin/run.sh"]
+# Override the image ENTRYPOINT to add some logic
+COPY launcher.sh /usr/local/bin/launcher
+RUN chmod +x /usr/local/bin/launcher
+ENTRYPOINT ["launcher"]
+
+# Directory of the application
+WORKDIR /var/www/html
+
+CMD ["apache2-foreground"]

@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-	<?php if(base_url()!="http://cexpress.docker:8084/"){ ?>
+	<?php if(base_url()!="http://cexpress.docker/"){ ?>
 	    <link rel="stylesheet" href="<?php echo base_url(); ?>css/initialize.css" media="screen" title="ni-title" charset="utf-8">
 	    <link rel="stylesheet" href="<?php echo base_url(); ?>css/cexpress-main.css" media="screen" title="ni-title" charset="utf-8">
 	    <link rel="stylesheet" href="<?php echo base_url(); ?>css/main-menu.css" media="screen" title="ni-title" charset="utf-8">
@@ -31,7 +31,7 @@
 	    <article>
 		  <div id="hd-top">
 		    <h1>
-			 <?php if(base_url()!="http://cexpress.docker:8084/"){ ?>
+			 <?php if(base_url()!="http://cexpress.docker/"){ ?>
 				<img src="<?php echo base_url(); ?>images/index.png"/>
 			<?php } else{ ?>
 			   <img src="<?php echo base_url(); ?>images/cexpress/index.png"/>
